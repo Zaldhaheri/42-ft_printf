@@ -10,13 +10,13 @@ int ft_argconv(va_list *args, char c)
     else if (c == 's')
         n += ft_putstr(va_arg(*args, char *));
     else if (c == 'p')
-        n += 1;
+        n += ft_putpointer(va_arg(*args, unsigned long));
     else if (c == 'd')
         n += ft_putnbr(va_arg(*args, int));
     else if (c == 'i')
         n += ft_putnbr(va_arg(*args, int));
     else if (c == 'u')
-        return (1);
+        n += ft_putnbru(va_arg(*args, unsigned int));
     else if (c == 'x')
         n += ft_puthex_lower(va_arg(*args, unsigned int));
     else if (c == 'X')
@@ -49,5 +49,8 @@ int ft_printf(const char *s, ...)
 
 int main()
 {
-    printf("%d\n%d", printf("hello %X %x\n", 10, 10), ft_printf("hello %X %x\n", 10, 10));
+    int a = 5;
+    int *ptr = &a;
+    printf("%p %d\n", ptr, ptr);
+    ft_printf("%p %d\n", ptr, ptr);
 }

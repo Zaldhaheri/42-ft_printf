@@ -10,7 +10,7 @@ void ft_printnum(int x)
         x = -x;
     }
     if (x > 9)
-        ft_putnbr(x / 10);
+        ft_printnum(x / 10);
     write(1, &"0123456789"[x % 10], 1);
 }
 

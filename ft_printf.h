@@ -11,6 +11,8 @@ int ft_isconversion(char c);
 int ft_putchar(char c);
 int ft_putstr(char *s);
 int ft_putnbr(int x);
+int ft_putnbru(unsigned int x);
+int ft_putpointer(unsigned long v);
 int ft_puthex_upper(unsigned int x);
 int ft_puthex_lower(unsigned int x);
 int ft_printf(const char *s, ...);
