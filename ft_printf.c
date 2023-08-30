@@ -37,7 +37,7 @@ int ft_printf(const char *s, ...)
     va_start(args, s);
     while(s[i])
     {
-        if (s[i] == '%')
+        if (s[i] == '%' && ft_isconversion(s[i + 1]))
             n += ft_argconv(&args, s[++i]);
         else
             n += ft_putchar(s[i]);
@@ -45,12 +45,4 @@ int ft_printf(const char *s, ...)
     }
     va_end(args);
     return (n);
-}
-
-int main()
-{
-    int a = 5;
-    int *ptr = &a;
-    printf("%p %d\n", ptr, ptr);
-    ft_printf("%p %d\n", ptr, ptr);
 }
